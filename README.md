@@ -56,3 +56,29 @@ GET [https://crack-dashing-pangolin.ngrok-free.app/WeatherForecast/GetWeather/{c
 - Location: Содержит имя, местное время, регион и страну.
 - CurrentWeather: Включает температуру, скорость ветра и описание погодных условий.
 - Condition: Подробности о текущих условиях погоды.
+
+## Пример
+
+Запрос: GET [https://crack-dashing-pangolin.ngrok-free.app/WeatherForecast/GetWeather/{Таганрог}]
+
+Ответ:
+
+{
+
+    "location": {
+        "name": "Таганрог",
+        "localtime": "2024-12-17 00:05",
+        "region": "Rostov",
+        "country": "Россия"
+    },
+    "current": {
+        "temp_C": 4.2,
+        "condition": {
+            "text": "Местами дождь"
+        },
+        "wind_Kph": 38.9
+    }
+}
+
+
+
