@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using WeatherApi.Models;
 using WeatherApi.Services;
 
@@ -14,7 +15,13 @@ namespace WeatherApi.Controllers
             _httpClient =  new HttpClient();
         }
 
+        
+        
+
         [HttpGet("GetWeather/{city}")]
+        [SwaggerOperation(
+        Summary = "Вывод настроек отправителя",
+        Description = "Вывод текущих настроек почты, с которой посылаются запросы")]
         public async Task<ActionResult> GetCurrentWeatherInTown([FromRoute] string city)
         {
             if (string.IsNullOrEmpty(city))
@@ -30,6 +37,7 @@ namespace WeatherApi.Controllers
                 if (result == null)
                 {
                     return NotFound($"Weather data for city '{city}' not found.");
+                    
                 }
                 else
                 {
