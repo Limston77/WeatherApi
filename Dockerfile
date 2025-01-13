@@ -13,10 +13,10 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-1809 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["WeatherApi/WeatherApi.csproj", "WeatherApi/"]
-RUN dotnet restore "./WeatherApi/WeatherApi.csproj"
+COPY ["WeatherApi.csproj", "."]
+RUN dotnet restore "./WeatherApi.csproj"
 COPY . .
-WORKDIR "/src/WeatherApi"
+WORKDIR "/src/."
 RUN dotnet build "./WeatherApi.csproj" -c %BUILD_CONFIGURATION% -o /app/build
 
 # Этот этап используется для публикации проекта службы, который будет скопирован на последний этап

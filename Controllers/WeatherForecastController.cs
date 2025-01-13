@@ -20,8 +20,8 @@ namespace WeatherApi.Controllers
 
         [HttpGet("GetWeather/{city}")]
         [SwaggerOperation(
-        Summary = "Вывод настроек отправителя",
-        Description = "Вывод текущих настроек почты, с которой посылаются запросы")]
+        Summary = "Вывод информации о текущей погоде",
+        Description = "Введите название города, погоду в котором хотите узнать")]
         public async Task<ActionResult> GetCurrentWeatherInTown([FromRoute] string city)
         {
             if (string.IsNullOrEmpty(city))
