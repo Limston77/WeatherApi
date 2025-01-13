@@ -1,1 +1,1 @@
-﻿﻿startCommand = "dotnet WeatherApi.dll"
+﻿startCommand="dotnet WeatherApi.dll"
