@@ -5,6 +5,7 @@
 
 # Этот этап используется при запуске из VS в быстром режиме (по умолчанию для конфигурации отладки)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-nanoserver-1809 AS base
+USER app
 WORKDIR /app
 EXPOSE 8080
 
